@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+.header-img {
+  width: 50%;
+  margin: 2rem auto 4rem auto;
+}
+
+.main-div {
+  text-align: left;
+}
+
+input {
+  height: 2rem;
+  margin-right: 0.5rem;
+  outline: none;
+  font-size: 1rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.search-button {
+  background-color: transparent;
+  height: 2rem;
+  border: none;
+  padding: 0.3rem;
+  outline: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.info-div {
+  display: flex;
+}
+
+.pokemon-div {
+  /* margin: 2rem 20rem 2rem 0; */
+}
+
+.pokemon-div li {
+  width: 15rem;
+  font-size: 1.3rem;
+  list-style: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0.2rem;
+}
+
+.pokemon-list-div ul {
+  width: 20rem;
+  height: 20rem;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
