@@ -1,11 +1,17 @@
-const epxress = require("express");
+const express = require("express");
 const api = require("./routes");
 const cors = require("cors");
-
-const app = epxress();
+const path = require("path");
+const app = express();
 
 app.use(cors());
-app.use(epxress.json());
+app.use(express.json());
+
+app.use(express.static(path.join(__dirname, "build")));
+
+app.use("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "build"));
+});
 
 app.use("/api", api);
 
