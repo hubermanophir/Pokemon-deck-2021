@@ -83,7 +83,7 @@ function Main() {
       <input
         type="text"
         value={userInput}
-        onChange={(e) => setUserInput(e.target.value)}
+        onChange={(e) => setUserInput(e.target.value.toLowerCase())}
       ></input>
       <button className="search-button" onClick={clickHandler}>
         🔍
@@ -97,10 +97,11 @@ function Main() {
           pokemon={pokemon}
           setType={setType}
           checkIfCollection={checkIfCollection}
+          setCollection={setCollection}
         />
-        <TypeList pokemonList={pokemonList} onPokemonClick={resetData} />
         {showCollection ? <Collection collection={collection} /> : null}
       </div>
+      <TypeList pokemonList={pokemonList} onPokemonClick={resetData} />
     </div>
   );
 }

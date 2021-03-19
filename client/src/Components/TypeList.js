@@ -14,10 +14,10 @@ function TypeList({ pokemonList, onPokemonClick }) {
                 onPokemonClick(pokemon.name);
               }}
             >
-              {pokemon.name}
               <img
                 src={photoArr.find((obj) => obj.name === pokemon.name).image}
               />
+              {pokemon.name}
             </li>
           );
         })}

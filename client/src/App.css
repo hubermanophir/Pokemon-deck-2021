@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+body {
+  background: linear-gradient(
+    160deg,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(232, 255, 0, 1) 100%
+  );
+  height: 100vh;
+}
+
 .App {
   width: 50%;
   margin: auto;
@@ -27,6 +36,8 @@ input {
   border: 1px solid black;
   border-radius: 5px;
   padding: 0.5rem;
+  color: white;
+  background: hsl(0, 0%, 0%, 0.1);
 }
 
 .search-button {
@@ -37,14 +48,65 @@ input {
   outline: none;
   font-size: 1.1rem;
   cursor: pointer;
+  margin-right: 1rem;
+}
+
+.collection-button {
+  padding: 0.3rem;
+  cursor: pointer;
+  background: linear-gradient(
+    160deg,
+    rgba(38, 56, 186, 1) 0%,
+    rgba(130, 131, 205, 1) 100%
+  );
+  outline: none;
+  color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.collection-button:hover {
+  background: linear-gradient(
+    160deg,
+    rgba(130, 131, 205, 1) 0%,
+    rgba(38, 56, 186, 1) 100%
+  );
+}
+
+.collection-div {
+  position: relative;
+  bottom: 4.5rem;
+  text-align: center;
+  background: hsl(0, 0%, 0%, 0.1);
+  border-radius: 5px;
+}
+
+.collection-div ul {
+  width: 20rem;
+  height: 12rem;
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.collection-div ul li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.collection-div ul li img {
+  width: 9.5rem;
 }
 
 .info-div {
   display: flex;
+  justify-content: space-between;
+  margin: 2rem 0 2rem 0;
 }
 
 .pokemon-div {
-  /* margin: 2rem 20rem 2rem 0; */
+  height: 15rem;
 }
 
 .pokemon-div li {
@@ -56,10 +118,61 @@ input {
   padding: 0.2rem;
 }
 
+.pokemon-div li span {
+  cursor: pointer;
+}
+
+.pokemon-list-div {
+  background: hsl(0, 0%, 0%, 0.1);
+  border-radius: 5px;
+}
+
 .pokemon-list-div ul {
-  width: 20rem;
-  height: 20rem;
+  width: 100%;
+  height: 14rem;
+  display: flex;
+  flex-wrap: wrap;
   overflow-y: scroll;
+  list-style: none;
+}
+
+.pokemon-list-div ul li {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.pokemon-div img {
+  width: 10rem;
+}
+
+.img-button-div {
+  display: flex;
+}
+
+.img-button-div button {
+  cursor: pointer;
+  width: 4rem;
+  height: 1.5rem;
+  margin-top: 4.2rem;
+  background: linear-gradient(
+    160deg,
+    rgba(38, 56, 186, 1) 0%,
+    rgba(130, 131, 205, 1) 100%
+  );
+  color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+  padding: 0.2rem;
+}
+
+.img-button-div button:hover {
+  background: linear-gradient(
+    160deg,
+    rgba(130, 131, 205, 1) 0%,
+    rgba(38, 56, 186, 1) 100%
+  );
 }
 
 ::-webkit-scrollbar {
@@ -74,4 +187,9 @@ input {
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+small {
+  position: relative;
+  top: 1rem;
 }

@@ -4,7 +4,7 @@ import axios from "axios";
 
 const BASE_URL = "/api";
 
-function Pokemon({ pokemon, setType, checkIfCollection }) {
+function Pokemon({ pokemon, setType, checkIfCollection, setCollection }) {
   const [isCatch, setIsCatch] = useState(false);
 
   useEffect(async () => {
@@ -22,6 +22,8 @@ function Pokemon({ pokemon, setType, checkIfCollection }) {
     (async function postPokemon() {
       try {
         await axios.post(`${BASE_URL}/collection/catch`, pokemon);
+        const res = await axios.get(`${BASE_URL}/collection`);
+        setCollection(res.data);
       } catch (err) {
         console.log(err);
       }
@@ -35,6 +37,8 @@ function Pokemon({ pokemon, setType, checkIfCollection }) {
     (async function postPokemon() {
       try {
         await axios.delete(`${BASE_URL}/collection/release/${pokemon.id}`);
+        const res = await axios.get(`${BASE_URL}/collection`);
+        setCollection(res.data);
       } catch (err) {
         console.log(err);
       }
@@ -63,24 +67,26 @@ function Pokemon({ pokemon, setType, checkIfCollection }) {
           })}
         </li>
       </ul>
-      <img
-        onMouseOut={(e) =>
-          (e.currentTarget.src = `${pokemon.sprites.front_default}`)
-        }
-        onMouseOver={(e) =>
-          (e.currentTarget.src = `${pokemon.sprites.back_default}`)
-        }
-        src={pokemon.sprites.front_default}
-      />
-      {pokemon.name ? (
-        <button
-          onClick={() => {
-            setIsCatch(!isCatch);
-          }}
-        >
-          {isCatch ? `Release` : `Catch`}
-        </button>
-      ) : null}
+      <div className="img-button-div">
+        <img
+          onMouseOut={(e) =>
+            (e.currentTarget.src = `${pokemon.sprites.front_default}`)
+          }
+          onMouseOver={(e) =>
+            (e.currentTarget.src = `${pokemon.sprites.back_default}`)
+          }
+          src={pokemon.sprites.front_default}
+        />
+        {pokemon.name ? (
+          <button
+            onClick={() => {
+              setIsCatch(!isCatch);
+            }}
+          >
+            {isCatch ? `Release` : `Catch`}
+          </button>
+        ) : null}
+      </div>
     </div>
   );
 }
