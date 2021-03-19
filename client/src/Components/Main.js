@@ -5,7 +5,7 @@ import Pokemon from "./Pokemon";
 import TypeList from "./TypeList";
 import Collection from "./Collection";
 
-const BASE_URL = "http://localhost:3001/api";
+const BASE_URL = "/api";
 
 function Main() {
   const [pokemon, setPokemon] = useState({

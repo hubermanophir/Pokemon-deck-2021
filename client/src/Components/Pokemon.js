@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../App.css";
 import axios from "axios";
 
-const BASE_URL = "http://localhost:3001/api";
+const BASE_URL = "/api";
 
 function Pokemon({ pokemon, setType, checkIfCollection }) {
   const [isCatch, setIsCatch] = useState(false);
